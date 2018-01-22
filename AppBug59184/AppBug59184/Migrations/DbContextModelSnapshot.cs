@@ -18,7 +18,45 @@ namespace AppBug59184.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.0.1-rtm-125");
 
-            modelBuilder.Entity("AppBug59184.Model.NullableEntity", b =>
+            modelBuilder.Entity("AppBug59184.Model.BuggedNotNullbaleEntity", b =>
+                {
+                    b.Property<int>("Key")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("NotNullable1");
+
+                    b.Property<bool>("NotNullable10");
+
+                    b.Property<bool>("NotNullable11");
+
+                    b.Property<bool>("NotNullable12");
+
+                    b.Property<bool>("NotNullable13");
+
+                    b.Property<bool>("NotNullable14");
+
+                    b.Property<bool>("NotNullable2");
+
+                    b.Property<bool>("NotNullable3");
+
+                    b.Property<bool>("NotNullable4");
+
+                    b.Property<bool>("NotNullable5");
+
+                    b.Property<bool>("NotNullable6");
+
+                    b.Property<bool>("NotNullable7");
+
+                    b.Property<bool>("NotNullable8");
+
+                    b.Property<bool>("NotNullable9");
+
+                    b.HasKey("Key");
+
+                    b.ToTable("BuggedNotNullableEntities");
+                });
+
+            modelBuilder.Entity("AppBug59184.Model.BuggedNullableEntity", b =>
                 {
                     b.Property<int>("Key")
                         .ValueGeneratedOnAdd();
@@ -33,7 +71,59 @@ namespace AppBug59184.Migrations
 
                     b.HasKey("Key");
 
-                    b.ToTable("NullableEntities");
+                    b.ToTable("BuggedNullableEntities");
+                });
+
+            modelBuilder.Entity("AppBug59184.Model.OkNotNullableEntity", b =>
+                {
+                    b.Property<int>("Key")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("NotNullable1");
+
+                    b.Property<bool>("NotNullable10");
+
+                    b.Property<bool>("NotNullable11");
+
+                    b.Property<bool>("NotNullable12");
+
+                    b.Property<bool>("NotNullable13");
+
+                    b.Property<bool>("NotNullable2");
+
+                    b.Property<bool>("NotNullable3");
+
+                    b.Property<bool>("NotNullable4");
+
+                    b.Property<bool>("NotNullable5");
+
+                    b.Property<bool>("NotNullable6");
+
+                    b.Property<bool>("NotNullable7");
+
+                    b.Property<bool>("NotNullable8");
+
+                    b.Property<bool>("NotNullable9");
+
+                    b.HasKey("Key");
+
+                    b.ToTable("OkNotNullableEntities");
+                });
+
+            modelBuilder.Entity("AppBug59184.Model.OkNullableEntity", b =>
+                {
+                    b.Property<int>("Key")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<long?>("Nullable1");
+
+                    b.Property<long?>("Nullable2");
+
+                    b.Property<long?>("Nullable3");
+
+                    b.HasKey("Key");
+
+                    b.ToTable("OkNullableEntities");
                 });
 #pragma warning restore 612, 618
         }

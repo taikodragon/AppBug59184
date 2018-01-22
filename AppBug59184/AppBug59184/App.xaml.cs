@@ -48,31 +48,55 @@ namespace AppBug59184
                 return;
             }
 
-            // Insert data
+            // Insert data in OkNullableEntities
             try
             {
-                await dbConn.NullableEntities.AddAsync(new Model.NullableEntity());
-                await dbConn.NullableEntities.AddAsync(new Model.NullableEntity());
-                await dbConn.NullableEntities.AddAsync(new Model.NullableEntity());
-                await dbConn.NullableEntities.AddAsync(new Model.NullableEntity());
-                await dbConn.NullableEntities.AddAsync(new Model.NullableEntity());
+                await dbConn.OkNullableEntities.AddAsync(new Model.OkNullableEntity());
                 await dbConn.SaveChangesAsync();
+                await App.Current.MainPage.DisplayAlert("Success", "Adding data to OkNullableEntities (4 fields with nullable) : OK", "OK");
             }
             catch (Exception ex)
             {
-                await App.Current.MainPage.DisplayAlert("Error", "Can't insert data !\n\n" + ex.ToString(), "OK");
+                await App.Current.MainPage.DisplayAlert("Success", "Adding data to OkNullableEntities (4 fields with nullable) : ERROR\n\n" + ex.ToString(), "OK");
                 return;
             }
 
-            // Read data
+            // Insert data in OkNotNullableEntities
             try
             {
-                var x = await dbConn.Database.ExecuteSqlCommandAsync(new RawSqlString("SELECT COUNT(*) FROM NullableEntities"));
-                await App.Current.MainPage.DisplayAlert("Success", "Row count = " + x.ToString(), "OK");
+                await dbConn.OkNotNullableEntities.AddAsync(new Model.OkNotNullableEntity());
+                await dbConn.SaveChangesAsync();
+                await App.Current.MainPage.DisplayAlert("Success", "Adding data to OkNullableEntities (14 fields without nullable) : OK", "OK");
             }
             catch (Exception ex)
             {
-                await App.Current.MainPage.DisplayAlert("Error", "Can't read data !\n\n" + ex.ToString(), "OK");
+                await App.Current.MainPage.DisplayAlert("Success", "Adding data to OkNotNullableEntities (14 fields without nullable) : ERROR\n\n" + ex.ToString(), "OK");
+                return;
+            }
+
+            // Insert data in BuggedNullableEntities
+            try
+            {
+                await dbConn.BuggedNullableEntities.AddAsync(new Model.BuggedNullableEntity());
+                await dbConn.SaveChangesAsync();
+                await App.Current.MainPage.DisplayAlert("Success", "Adding data to BuggedNullableEntities (5 fields with nullable) : OK", "OK");
+            }
+            catch (Exception ex)
+            {
+                await App.Current.MainPage.DisplayAlert("Success", "Adding data to BuggedNullableEntities (5 fields with nullable) : ERROR\n\n" + ex.ToString(), "OK");
+                return;
+            }
+
+            // Insert data in BuggedNotNullableEntities
+            try
+            {
+                await dbConn.BuggedNullableEntities.AddAsync(new Model.BuggedNullableEntity());
+                await dbConn.SaveChangesAsync();
+                await App.Current.MainPage.DisplayAlert("Success", "Adding data to BuggedNotNullableEntities (15 fields without nullable) : OK", "OK");
+            }
+            catch (Exception ex)
+            {
+                await App.Current.MainPage.DisplayAlert("Success", "Adding data to BuggedNotNullableEntities (15 fields without nullable) : ERROR\n\n" + ex.ToString(), "OK");
                 return;
             }
         }
