@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20180120102540_Initial.cs" />
+    <Compile Remove="Migrations\20180120154303_AddingRows.cs" />
+    <Compile Remove="Migrations\20180120155108_Initial.cs" />
+    <Compile Remove="Migrations\20180122085342_Initial.cs" />
+    <Compile Remove="Migrations\20180122090023_Initial.cs" />
+    <Compile Remove="Migrations\20180122090347_Initial.cs" />
+    <Compile Remove="Migrations\20180122090638_Initial.cs" />
+    <Compile Remove="Migrations\20180122090927_Initial.cs" />
+    <Compile Remove="Migrations\20180122091204_Initial.cs" />
+    <Compile Remove="Migrations\20180122091447_Initial.cs" />
+    <Compile Remove="Migrations\20180122091714_Initial.cs" />
+    <Compile Remove="Migrations\20180122091959_Initial.cs" />
+    <Compile Remove="Migrations\20180122092504_Initial.cs" />
+    <Compile Remove="Migrations\20180122092758_Initial.cs" />
+    <Compile Remove="Migrations\20180122093043_Initial.cs" />
+    <Compile Remove="Migrations\20180122093342_Initial.cs" />
+    <Compile Remove="Migrations\20180122093933_Initial.cs" />
+    <Compile Remove="Migrations\20180122094258_Initial.cs" />
+    <Compile Remove="Migrations\20180122095231_Initial.cs" />
+    <Compile Remove="Migrations\20180122095923_Initial.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.0.1" />
+    <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="App.xaml.cs">
+      <DependentUpon>*.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="MainPage.xaml.cs">
+      <DependentUpon>*.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>
