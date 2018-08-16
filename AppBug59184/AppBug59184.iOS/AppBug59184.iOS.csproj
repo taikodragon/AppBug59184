@@ -47,12 +47,11 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
-    <CodesignKey>iPhone Developer: Loic Montagne (EB3WHYE99U)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchFloat32>true</MtouchFloat32>
     <MtouchExtraArgs>--xml=${ProjectDir}/LinkDescription.xml</MtouchExtraArgs>
-    <CodesignProvision>AppBug59184 Development Profile</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -122,12 +121,12 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
+    <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\AppBug59184\AppBug59184.csproj">
-      <Project>{7C0751E2-DEB6-487C-9488-58364B8A3AE6}</Project>
+      <Project>{78F4DCAA-51F0-43C9-8480-5BC0B8437EA3}</Project>
       <Name>AppBug59184</Name>
     </ProjectReference>
   </ItemGroup>

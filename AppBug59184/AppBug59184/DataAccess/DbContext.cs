@@ -7,6 +7,7 @@ namespace AppBug59184
     public class DbContext : Microsoft.EntityFrameworkCore.DbContext
     {
         public string DatabasePath { get; private set; }
+        public DbSet<Model.BuggedLargerNullableEntity> BuggedLargerNullableEntities { get; set; }
         public DbSet<Model.BuggedNullableEntity> BuggedNullableEntities { get; set; }
         public DbSet<Model.OkNullableEntity> OkNullableEntities { get; set; }
         public DbSet<Model.BuggedNotNullbaleEntity> BuggedNotNullableEntities { get; set; }

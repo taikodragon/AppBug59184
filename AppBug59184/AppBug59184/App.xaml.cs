@@ -99,6 +99,18 @@ namespace AppBug59184
                 await App.Current.MainPage.DisplayAlert("Success", "Adding data to BuggedNotNullableEntities (15 fields without nullable) : ERROR\n\n" + ex.ToString(), "OK");
                 return;
             }
+            // Insert data in BuggedLargerNullableEntities
+            try
+            {
+                await dbConn.BuggedLargerNullableEntities.AddAsync(new Model.BuggedLargerNullableEntity());
+                await dbConn.SaveChangesAsync();
+                await App.Current.MainPage.DisplayAlert("Success", "Adding data to BuggedLargerNullableEntities (5 fields without nullable + 7 field with nullable) : OK", "OK");
+            }
+            catch (Exception ex)
+            {
+                await App.Current.MainPage.DisplayAlert("Success", "Adding data to BuggedLargerNullableEntities (5 fields without nullable + 7 field with nullable) : ERROR\n\n" + ex.ToString(), "OK");
+                return;
+            }
         }
 
         protected override void OnSleep ()
